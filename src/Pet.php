@@ -28,3 +28,12 @@ class Pet {
         return Self::$quantidadePet--;
     }
 }
+
+$petArray = [
+new Pet('macho', 'cachorro'),
+new Pet('macho', 'cachorro'),
+new Pet('macho', 'cachorro'),
+new Pet('macho', 'cachorro'),
+new Pet('macho', 'cachorro'),
+new Pet('macho', 'cachorro') 
+];

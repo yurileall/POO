@@ -4,16 +4,9 @@ require_once 'src/Adotante.php';
 require_once 'src/Endereco.php';
 require_once 'src/Pet.php';
 
-$pet = new Pet('macho', 'cachorro');
-$pet = new Pet('macho', 'cachorro');
-$pet = new Pet('macho', 'cachorro');
-$pet = new Pet('macho', 'cachorro');
-$pet = new Pet('macho', 'cachorro');
-$pet = new Pet('macho', 'cachorro');
-
 $endereco = new Endereco(10, '40325-210', 'Travessa Campos França');
-$Primeiroadotante = new Adotante( $endereco, $pet, 'Yuri', 21);
-echo $Primeiroadotante->adotar($pet) . PHP_EOL;
+$Primeiroadotante = new Adotante( $endereco, 'Yuri', 21);
+echo $Primeiroadotante->adotar($petArray[0]) . PHP_EOL;
 
 // echo $Primeiroadotante->recuperarPetTipo() . PHP_EOL;
 // echo $Primeiroadotante->recuperarNome() . PHP_EOL;
@@ -23,13 +16,13 @@ echo $Primeiroadotante->adotar($pet) . PHP_EOL;
 // echo $Primeiroadotante->recuperarEnderecoCep() . PHP_EOL;
 
 $endereco = new Endereco(10, '40325-210', 'Travessa Campos França');
-$Segundoadotante = new Adotante( $endereco, $pet, 'Yuri', 21);
-echo $Segundoadotante->adotar($pet) . PHP_EOL;
+$Segundoadotante = new Adotante( $endereco, 'Yuri', 21);
+echo $Segundoadotante->adotar($petArray[1]) . PHP_EOL;
 
 $endereco = new Endereco(10, '40325-210', 'Travessa Campos França');
-$Terceiroadotante = new Adotante( $endereco, $pet, 'Yuri', 21);
-echo $Terceiroadotante->adotar($pet) . PHP_EOL;
+$Terceiroadotante = new Adotante( $endereco, 'Yuri', 21);
+echo $Terceiroadotante->adotar($petArray[2]) . PHP_EOL;
 
-echo $pet->recuperarQuantidade() . PHP_EOL;
+echo $petArray[0]->recuperarQuantidade() . PHP_EOL;
 
 //var_dump($Primeiroadotante);exit;

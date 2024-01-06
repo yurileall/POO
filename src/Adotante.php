@@ -7,13 +7,12 @@ class Adotante {
     private $idade;
     private $pet;
 
-    public function __construct(Endereco $endereco, Pet $pet, string  $nome, int $idade)
+    public function __construct(Endereco $endereco, string  $nome, int $idade)
     {
         $this->nome = $nome;
         $this->endereco = $endereco;
         $this->validaIdade($idade);
         $this->idade = $idade;
-        $this->pet = $pet;
     }
 
     public function recuperarNome() {
@@ -36,25 +35,14 @@ class Adotante {
         return $this->endereco->recuperarLogradouro();
     }
 
-    public function recuperarPetSexo() {
-        return $this->pet->recuperarSexo();
-    }
+    public function adotar(Pet $petEscolhido) {
 
-    public function recuperarPetTipo() {
-        return $this->pet->recuperarTipo();
-    }
-
-    public function recuperarPetQuantidade() {
-        return $this->pet->recuperarQuantidade();
-    }
-
-    public function adotar($pet) {
-
-        if ($this->pet->recuperarQuantidade() < 0) {
+        if ($petEscolhido->recuperarQuantidade() < 0) {
             echo "Não há mais pets para serem adotado";
         }
-            $this->pet->diminuirQuantidade();
-           
+            $petEscolhido->diminuirQuantidade();
+            $this->pet = $petEscolhido;
+            echo "Pet adotado com sucesso";
     }
 
     public function validaIdade($idade) {
